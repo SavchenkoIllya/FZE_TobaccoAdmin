@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_pillars",
+  "info": {
+    "displayName": "Pillar"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "1",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "default": "year of experience",
+      "required": true
+    }
+  },
+  "config": {}
+}

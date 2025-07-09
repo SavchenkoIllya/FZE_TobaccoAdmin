@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_about_contents",
+  "info": {
+    "displayName": "About_content"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "About us",
+      "required": true
+    },
+    "main_title": {
+      "type": "string",
+      "default": "our promise:",
+      "required": true
+    },
+    "secondary_title": {
+      "type": "string",
+      "default": "Tradition. Quality. Affordability.",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "            We are a passionate tobacco manufacturer committed to delivering             high-quality, affordable cigarettes for adult smokers. With more             than a decade of expertise, our company blends time-honored tobacco             traditions with modern innovation to create products that stand out             in both taste and reliability. While our brand may not yet be widely             known, we are driven by a clear philosophy: every smoker deserves             access to quality without compromise. We focus on craftsmanship,             consistency, and honest pricing — values that define who we are and             what we offer. Proudly serving both domestic and international             markets, we continue to expand our reach while maintaining the             integrity and care that go into every product we make.",
+      "required": true
+    },
+    "pillars": {
+      "type": "component",
+      "component": "shared.pillar",
+      "repeatable": true,
+      "min": 3,
+      "max": 6
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "singularName": "message",
+    "pluralName": "messages",
+    "displayName": "Message"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "details": {
+      "type": "string"
+    },
+    "work_status": {
+      "type": "enumeration",
+      "default": "unread",
+      "enum": [
+        "read",
+        "unread",
+        "pending",
+        "answered"
+      ]
+    }
+  }
+}

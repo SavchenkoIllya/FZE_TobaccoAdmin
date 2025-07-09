@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "product_cards",
+  "info": {
+    "singularName": "product-card",
+    "pluralName": "product-cards",
+    "displayName": "ProductCard"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "description_fields": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.description-field",
+      "repeatable": true
+    },
+    "close_text": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Close",
+      "required": true
+    }
+  }
+}

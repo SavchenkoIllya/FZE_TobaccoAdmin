@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_documents_lists",
+  "info": {
+    "displayName": "Documents list"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "upload_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::upload-item.upload-item"
+    }
+  },
+  "config": {}
+}

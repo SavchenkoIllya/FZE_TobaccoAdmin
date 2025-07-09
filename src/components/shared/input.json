@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_inputs",
+  "info": {
+    "displayName": "Input"
+  },
+  "options": {},
+  "attributes": {
+    "placeholder": {
+      "type": "string",
+      "default": "Name",
+      "required": true
+    },
+    "field_name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "field",
+      "enum": [
+        "field",
+        "textarea"
+      ]
+    }
+  },
+  "config": {}
+}

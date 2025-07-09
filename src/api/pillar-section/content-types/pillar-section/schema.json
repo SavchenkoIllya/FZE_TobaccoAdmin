@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "pillar_sections",
+  "info": {
+    "singularName": "pillar-section",
+    "pluralName": "pillar-sections",
+    "displayName": "Pillar Section"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pillars_list": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.pillar",
+      "repeatable": true,
+      "min": 6,
+      "max": 8
+    }
+  }
+}

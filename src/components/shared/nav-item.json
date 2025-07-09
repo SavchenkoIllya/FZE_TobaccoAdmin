@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_nav_items",
+  "info": {
+    "displayName": "Nav Item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "section_id": {
+      "type": "enumeration",
+      "enum": [
+        "about",
+        "brands",
+        "catalogue",
+        "contacts"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shared_description_fields",
+  "info": {
+    "displayName": "Description Field"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "property": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "blend",
+        "cigarette_length",
+        "nicotine",
+        "tar",
+        "filter_parameters"
+      ]
+    }
+  },
+  "config": {}
+}

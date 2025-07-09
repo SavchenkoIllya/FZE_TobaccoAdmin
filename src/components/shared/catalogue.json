@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_catalogues",
+  "info": {
+    "displayName": "Catalogue"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Catalogue",
+      "required": true
+    },
+    "brands": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brand.brand"
+    },
+    "formats": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::format.format"
+    }
+  },
+  "config": {}
+}

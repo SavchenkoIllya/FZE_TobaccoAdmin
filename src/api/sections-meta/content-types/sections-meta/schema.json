@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections_metas",
+  "info": {
+    "singularName": "sections-meta",
+    "pluralName": "sections-metas",
+    "displayName": "Sections Meta"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "required": true,
+      "unique": true
+    }
+  }
+}

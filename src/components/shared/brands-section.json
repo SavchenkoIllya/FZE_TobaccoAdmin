@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_brands_sections",
+  "info": {
+    "displayName": "brands_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "brands": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brand.brand"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
