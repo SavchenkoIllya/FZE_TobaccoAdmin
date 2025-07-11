@@ -60,14 +60,6 @@
       },
       "default": "American blend"
     },
-    "filter_parameters": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "nicotine": {
       "type": "string",
       "pluginOptions": {
@@ -94,6 +86,11 @@
         }
       },
       "required": true
+    },
+    "filter_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::filter-type.filter-type"
     }
   }
 }

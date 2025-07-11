@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "filter_types",
+  "info": {
+    "singularName": "filter-type",
+    "pluralName": "filter-types",
+    "displayName": "Filter Type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    }
+  }
+}

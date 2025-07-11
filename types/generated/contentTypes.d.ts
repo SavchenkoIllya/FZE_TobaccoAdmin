@@ -559,6 +559,44 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFilterTypeFilterType extends Struct.CollectionTypeSchema {
+  collectionName: 'filter_types';
+  info: {
+    displayName: 'Filter Type';
+    pluralName: 'filter-types';
+    singularName: 'filter-type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::filter-type.filter-type'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFormatFormat extends Struct.CollectionTypeSchema {
   collectionName: 'formats';
   info: {
@@ -954,12 +992,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    filter_parameters: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    filter_type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::filter-type.filter-type'
+    >;
     format: Schema.Attribute.Relation<'oneToOne', 'api::format.format'>;
     image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
@@ -1711,6 +1747,7 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
+      'api::filter-type.filter-type': ApiFilterTypeFilterType;
       'api::format.format': ApiFormatFormat;
       'api::global.global': ApiGlobalGlobal;
       'api::header-section.header-section': ApiHeaderSectionHeaderSection;

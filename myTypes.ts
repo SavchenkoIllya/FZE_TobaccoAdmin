@@ -189,6 +189,16 @@ export interface Contact {
   icon: Media | null;
 };
 
+export interface FilterType {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  name: string;
+};
+
 export interface Format {
   id?: number;
   documentId?: string;
@@ -281,10 +291,10 @@ export interface Product {
   image?: Media | null;
   format?: Format | null;
   blend?: string;
-  filter_parameters?: string;
   nicotine: string;
   tar: string;
   cigarette_length: string;
+  filter_type?: FilterType | null;
 };
 
 export interface ProductCard {
