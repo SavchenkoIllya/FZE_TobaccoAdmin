@@ -135,7 +135,16 @@ export interface SharedDescriptionField extends Struct.ComponentSchema {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     property: Schema.Attribute.Enumeration<
-      ['blend', 'cigarette_length', 'nicotine', 'tar', 'filter_parameters']
+      [
+        'blend',
+        'cigarette_length',
+        'nicotine',
+        'tar',
+        'filter_type',
+        'diameter',
+        'filter_length',
+        'tobacco_length',
+      ]
     > &
       Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;

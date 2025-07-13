@@ -28,7 +28,10 @@
         "cigarette_length",
         "nicotine",
         "tar",
-        "filter_parameters"
+        "filter_type",
+        "diameter",
+        "filter_length",
+        "tobacco_length"
       ]
     }
   },

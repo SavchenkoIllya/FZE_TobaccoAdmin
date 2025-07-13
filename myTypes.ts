@@ -63,7 +63,7 @@ export interface SharedDescriptionField {
   id?: number;
   icon: Media | null;
   title: string;
-  property: "blend" | "cigarette_length" | "nicotine" | "tar" | "filter_parameters";
+  property: "blend" | "cigarette_length" | "nicotine" | "tar" | "filter_type" | "diameter" | "filter_length" | "tobacco_length";
 };
 
 export interface SharedDocumentItem {
@@ -295,6 +295,9 @@ export interface Product {
   tar: string;
   cigarette_length: string;
   filter_type?: FilterType | null;
+  filter_length?: string;
+  tobacco_length?: string;
+  diameter?: string;
 };
 
 export interface ProductCard {
