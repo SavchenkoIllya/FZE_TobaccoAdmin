@@ -166,6 +166,16 @@ export interface Brand {
   logo?: Media | null;
 };
 
+export interface CatalogueSection {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  filter_text: string;
+};
+
 export interface Category {
   id?: number;
   documentId?: string;
