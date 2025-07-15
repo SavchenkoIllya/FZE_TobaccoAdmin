@@ -29,7 +29,8 @@
         "telegram",
         "email",
         "phone",
-        "viber"
+        "viber",
+        "wechat"
       ]
     },
     "link": {

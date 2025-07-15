@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "catalogue_sections",
+  "info": {
+    "singularName": "catalogue-section",
+    "pluralName": "catalogue-sections",
+    "displayName": "Catalogue section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "filter_text": {
+      "type": "string",
+      "required": true
+    },
+    "sections_meta": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sections-meta.sections-meta"
+    }
+  }
+}

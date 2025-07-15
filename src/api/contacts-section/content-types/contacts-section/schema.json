@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts_sections",
+  "info": {
+    "singularName": "contacts-section",
+    "pluralName": "contacts-sections",
+    "displayName": "Contacts Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "form_inputs": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.input",
+      "repeatable": true
+    },
+    "map": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.map",
+      "repeatable": false
+    },
+    "sections_meta": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sections-meta.sections-meta"
+    }
+  }
+}

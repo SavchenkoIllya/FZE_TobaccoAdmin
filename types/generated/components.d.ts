@@ -229,6 +229,17 @@ export interface SharedLegalInfo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMap extends Struct.ComponentSchema {
+  collectionName: 'components_shared_maps';
+  info: {
+    displayName: 'Map';
+  };
+  attributes: {
+    lat: Schema.Attribute.Float & Schema.Attribute.Required;
+    lng: Schema.Attribute.Float & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedMapLocation extends Struct.ComponentSchema {
   collectionName: 'components_shared_map_locations';
   info: {
@@ -325,6 +336,7 @@ declare module '@strapi/strapi' {
       'shared.header': SharedHeader;
       'shared.input': SharedInput;
       'shared.legal-info': SharedLegalInfo;
+      'shared.map': SharedMap;
       'shared.map-location': SharedMapLocation;
       'shared.media': SharedMedia;
       'shared.nav-item': SharedNavItem;

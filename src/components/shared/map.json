@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_maps",
+  "info": {
+    "displayName": "Map"
+  },
+  "options": {},
+  "attributes": {
+    "lng": {
+      "type": "float",
+      "required": true
+    },
+    "lat": {
+      "type": "float",
+      "required": true
+    }
+  },
+  "config": {}
+}

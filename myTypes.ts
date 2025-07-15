@@ -113,6 +113,12 @@ export interface SharedMapLocation {
   lng: number;
 };
 
+export interface SharedMap {
+  id?: number;
+  lng: number;
+  lat: number;
+};
+
 export interface SharedMedia {
   id?: number;
   file?: Media | null;
@@ -154,6 +160,19 @@ export interface AboutSection {
   description: any;
 };
 
+export interface AgeModal {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  title: string;
+  subtitle?: string;
+  confirm_button: string;
+  close_button: string;
+};
+
 export interface Brand {
   id?: number;
   documentId?: string;
@@ -174,6 +193,7 @@ export interface CatalogueSection {
   publishedAt?: Date | string;
   locale?: string | null;
   filter_text: string;
+  sections_meta?: SectionsMeta | null;
 };
 
 export interface Category {
@@ -193,10 +213,23 @@ export interface Contact {
   updatedAt?: Date | string;
   publishedAt?: Date | string;
   locale?: string | null;
-  type: "whatsapp" | "telegram" | "email" | "phone" | "viber";
+  type: "whatsapp" | "telegram" | "email" | "phone" | "viber" | "wechat";
   link: string;
   title: string;
   icon: Media | null;
+};
+
+export interface ContactsSection {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  title?: string;
+  form_inputs?: SharedInput[] | null;
+  map?: SharedMap | null;
+  sections_meta?: SectionsMeta | null;
 };
 
 export interface FilterType {
@@ -209,6 +242,17 @@ export interface FilterType {
   name: string;
 };
 
+export interface FooterSection {
+  id?: number;
+  documentId?: string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  publishedAt?: Date | string;
+  locale?: string | null;
+  copyrights?: string;
+  upload_items?: UploadItem[] | null;
+};
+
 export interface Format {
   id?: number;
   documentId?: string;
@@ -217,27 +261,6 @@ export interface Format {
   publishedAt?: Date | string;
   locale?: string | null;
   name: string;
-};
-
-export interface Global {
-  id?: number;
-  documentId?: string;
-  createdAt?: Date | string;
-  updatedAt?: Date | string;
-  publishedAt?: Date | string;
-  locale?: string | null;
-  video_url?: string;
-  Header?: SharedHeader | null;
-  age_modal?: SharedAgeModal | null;
-  about_content: SharedAboutContent | null;
-  brands_section?: SharedBrandsSection | null;
-  additional_about_section?: SharedAdditionalAboutSection | null;
-  contacts_section?: SharedContactsSection | null;
-  map_location?: SharedMapLocation | null;
-  production_section?: SharedProductionSection | null;
-  catchphrase?: string;
-  catalogue?: SharedCatalogue | null;
-  footer_section?: SharedFooter | null;
 };
 
 export interface HeaderSection {

@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_sections",
+  "info": {
+    "singularName": "footer-section",
+    "pluralName": "footer-sections",
+    "displayName": "Footer Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "copyrights": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Copyright © 24 All rights reserved - VK Tobacco"
+    },
+    "upload_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::upload-item.upload-item"
+    }
+  }
+}

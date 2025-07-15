@@ -422,6 +422,66 @@ export interface ApiAboutSectionAboutSection extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAgeModalAgeModal extends Struct.SingleTypeSchema {
+  collectionName: 'age_modals';
+  info: {
+    displayName: 'Age Modal';
+    pluralName: 'age-modals';
+    singularName: 'age-modal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    close_button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'Close'>;
+    confirm_button: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'OK'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::age-modal.age-modal'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
   collectionName: 'brands';
   info: {
@@ -492,6 +552,10 @@ export interface ApiCatalogueSectionCatalogueSection
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sections_meta: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::sections-meta.sections-meta'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -573,7 +637,7 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
         };
       }>;
     type: Schema.Attribute.Enumeration<
-      ['whatsapp', 'telegram', 'email', 'phone', 'viber']
+      ['whatsapp', 'telegram', 'email', 'phone', 'viber', 'wechat']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -582,6 +646,60 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<'phone'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactsSectionContactsSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'contacts_sections';
+  info: {
+    displayName: 'Contacts Section';
+    pluralName: 'contacts-sections';
+    singularName: 'contacts-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    form_inputs: Schema.Attribute.Component<'shared.input', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contacts-section.contacts-section'
+    >;
+    map: Schema.Attribute.Component<'shared.map', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sections_meta: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::sections-meta.sections-meta'
+    >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -626,6 +744,48 @@ export interface ApiFilterTypeFilterType extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
+  collectionName: 'footer_sections';
+  info: {
+    displayName: 'Footer Section';
+    pluralName: 'footer-sections';
+    singularName: 'footer-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    copyrights: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'Copyright \u00A9 24 All rights reserved - VK Tobacco'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer-section.footer-section'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    upload_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::upload-item.upload-item'
+    >;
+  };
+}
+
 export interface ApiFormatFormat extends Struct.CollectionTypeSchema {
   collectionName: 'formats';
   info: {
@@ -653,118 +813,6 @@ export interface ApiFormatFormat extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-  };
-}
-
-export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
-  collectionName: 'globals';
-  info: {
-    description: 'Define global settings';
-    displayName: 'HomePage';
-    pluralName: 'globals';
-    singularName: 'global';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    about_content: Schema.Attribute.Component<'shared.about-content', false> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    additional_about_section: Schema.Attribute.Component<
-      'shared.additional-about-section',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    age_modal: Schema.Attribute.Component<'shared.age-modal', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    brands_section: Schema.Attribute.Component<'shared.brands-section', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    catalogue: Schema.Attribute.Component<'shared.catalogue', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    catchphrase: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<'\u201CCrafting true quality tobacco products\u201E'>;
-    contacts_section: Schema.Attribute.Component<
-      'shared.contacts-section',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    footer_section: Schema.Attribute.Component<'shared.footer', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Header: Schema.Attribute.Component<'shared.header', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::global.global'>;
-    map_location: Schema.Attribute.Component<'shared.map-location', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    production_section: Schema.Attribute.Component<
-      'shared.production-section',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    video_url: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
   };
 }
 
@@ -1791,13 +1839,15 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-section.about-section': ApiAboutSectionAboutSection;
+      'api::age-modal.age-modal': ApiAgeModalAgeModal;
       'api::brand.brand': ApiBrandBrand;
       'api::catalogue-section.catalogue-section': ApiCatalogueSectionCatalogueSection;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
+      'api::contacts-section.contacts-section': ApiContactsSectionContactsSection;
       'api::filter-type.filter-type': ApiFilterTypeFilterType;
+      'api::footer-section.footer-section': ApiFooterSectionFooterSection;
       'api::format.format': ApiFormatFormat;
-      'api::global.global': ApiGlobalGlobal;
       'api::header-section.header-section': ApiHeaderSectionHeaderSection;
       'api::hero-section.hero-section': ApiHeroSectionHeroSection;
       'api::message.message': ApiMessageMessage;
