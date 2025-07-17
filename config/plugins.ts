@@ -6,5 +6,5 @@ export default ({ env }) => ({
             // If this is true, then the outputLocation should be the location to a .ts file
             singleFile: true,
         },
-    },
+    }
 });
