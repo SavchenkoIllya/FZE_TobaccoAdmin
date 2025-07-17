@@ -28,6 +28,22 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::upload-item.upload-item"
+    },
+    "contacts_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "documents_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

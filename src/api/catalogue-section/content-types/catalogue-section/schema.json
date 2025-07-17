@@ -4,7 +4,7 @@
   "info": {
     "singularName": "catalogue-section",
     "pluralName": "catalogue-sections",
-    "displayName": "Catalogue section"
+    "displayName": "Catalogue Section"
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +19,10 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::sections-meta.sections-meta"
+    },
+    "search_placeholder": {
+      "type": "string",
+      "default": "Search"
     }
   }
 }

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "product-card",
     "pluralName": "product-cards",
-    "displayName": "ProductCard"
+    "displayName": "Product Card"
   },
   "options": {
     "draftAndPublish": true

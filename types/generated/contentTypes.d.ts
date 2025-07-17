@@ -533,7 +533,7 @@ export interface ApiCatalogueSectionCatalogueSection
   extends Struct.SingleTypeSchema {
   collectionName: 'catalogue_sections';
   info: {
-    displayName: 'Catalogue section';
+    displayName: 'Catalogue Section';
     pluralName: 'catalogue-sections';
     singularName: 'catalogue-section';
   };
@@ -552,6 +552,8 @@ export interface ApiCatalogueSectionCatalogueSection
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    search_placeholder: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Search'>;
     sections_meta: Schema.Attribute.Relation<
       'oneToOne',
       'api::sections-meta.sections-meta'
@@ -760,6 +762,12 @@ export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    contacts_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     copyrights: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -770,6 +778,12 @@ export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    documents_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -989,7 +1003,7 @@ export interface ApiPillarSectionPillarSection extends Struct.SingleTypeSchema {
 export interface ApiProductCardProductCard extends Struct.SingleTypeSchema {
   collectionName: 'product_cards';
   info: {
-    displayName: 'ProductCard';
+    displayName: 'Product Card';
     pluralName: 'product-cards';
     singularName: 'product-card';
   };
@@ -1244,6 +1258,14 @@ export interface ApiSectionsMetaSectionsMeta
       }> &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
+      }>;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
       }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

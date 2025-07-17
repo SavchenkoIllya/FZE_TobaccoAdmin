@@ -22,6 +22,11 @@
         "field",
         "textarea"
       ]
+    },
+    "required": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   },
   "config": {}

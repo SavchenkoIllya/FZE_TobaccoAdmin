@@ -1,62 +1,10 @@
 
-export interface SharedAboutContent {
-  id?: number;
-  heading: string;
-  main_title: string;
-  secondary_title: string;
-  description: string;
-  pillars?: SharedPillar[] | null;
-};
-
-export interface SharedAdditionalAboutSection {
-  id?: number;
-  title_main: string;
-  description_main: string;
-  title_secondary?: string;
-  description_secondary?: string;
-};
-
-export interface SharedAgeModal {
-  id?: number;
-  heading: string;
-  main_text: string;
-  cancel_button: string;
-  confirm_button: string;
-};
-
-export interface SharedBrandsSection {
-  id?: number;
-  title: string;
-  brands?: Brand[] | null;
-  subtitle?: string;
-};
-
-export interface SharedCatalogue {
-  id?: number;
-  title: string;
-  brands?: Brand[] | null;
-  formats?: Format[] | null;
-};
-
-export interface SharedContactList {
-  id?: number;
-  title?: string;
-  contacts?: Contact[] | null;
-};
-
 export interface SharedContact {
   id?: number;
   name?: string;
   link?: string;
   icon?: Media | null;
   type?: "whatsapp" | "telegram" | "email" | "phone" | "viber";
-};
-
-export interface SharedContactsSection {
-  id?: number;
-  heading: string;
-  form_inputs: SharedInput[] | null;
-  send_button: string;
 };
 
 export interface SharedDescriptionField {
@@ -66,51 +14,12 @@ export interface SharedDescriptionField {
   property: "blend" | "cigarette_length" | "nicotine" | "tar" | "filter_type" | "diameter" | "filter_length" | "tobacco_length";
 };
 
-export interface SharedDocumentItem {
-  id?: number;
-  name?: string;
-  icon?: Media | null;
-  upload?: Media | null;
-};
-
-export interface SharedDocumentsList {
-  id?: number;
-  title?: string;
-  upload_items?: UploadItem[] | null;
-};
-
-export interface SharedFooter {
-  id?: number;
-  legal_info?: SharedLegalInfo | null;
-  contact_list?: SharedContactList | null;
-  document_list?: SharedDocumentsList | null;
-  copyrights?: string;
-};
-
-export interface SharedHeader {
-  id?: number;
-  logo?: Media | null;
-  navbar?: SharedNavbar | null;
-  contacts?: Contact[] | null;
-};
-
 export interface SharedInput {
   id?: number;
   placeholder: string;
   field_name: string;
   type: "field" | "textarea";
-};
-
-export interface SharedLegalInfo {
-  id?: number;
-  title?: string;
-  full_address?: any;
-};
-
-export interface SharedMapLocation {
-  id?: number;
-  lat: number;
-  lng: number;
+  required: boolean;
 };
 
 export interface SharedMap {
@@ -119,33 +28,10 @@ export interface SharedMap {
   lat: number;
 };
 
-export interface SharedMedia {
-  id?: number;
-  file?: Media | null;
-};
-
-export interface SharedNavItem {
-  id?: number;
-  name: string;
-  section_id?: "about" | "brands" | "catalogue" | "contacts";
-};
-
-export interface SharedNavbar {
-  id?: number;
-  navitems?: SharedNavItem[] | null;
-};
-
 export interface SharedPillar {
   id?: number;
   title: string;
   label: string;
-};
-
-export interface SharedProductionSection {
-  id?: number;
-  title?: string;
-  description?: string;
-  catchphrase?: string;
 };
 
 export interface AboutSection {
@@ -194,6 +80,7 @@ export interface CatalogueSection {
   locale?: string | null;
   filter_text: string;
   sections_meta?: SectionsMeta | null;
+  search_placeholder?: string;
 };
 
 export interface Category {
@@ -251,6 +138,8 @@ export interface FooterSection {
   locale?: string | null;
   copyrights?: string;
   upload_items?: UploadItem[] | null;
+  contacts_title?: string;
+  documents_title?: string;
 };
 
 export interface Format {
@@ -368,6 +257,7 @@ export interface SectionsMeta {
   publishedAt?: Date | string;
   locale?: string | null;
   name: string;
+  order: number;
 };
 
 export interface Subscriber {
