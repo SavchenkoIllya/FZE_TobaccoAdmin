@@ -541,9 +541,12 @@ export interface ApiCatalogueSectionCatalogueSection
     draftAndPublish: true;
   };
   attributes: {
+    close_filter_text: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Close'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    filter_items: Schema.Attribute.Component<'shared.filter-item', true>;
     filter_text: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -584,7 +587,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       'api::category.category'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

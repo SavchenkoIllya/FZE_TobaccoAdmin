@@ -40,6 +40,30 @@ export interface SharedDescriptionField extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFilterItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_filter_items';
+  info: {
+    displayName: 'Filter Item';
+  };
+  attributes: {
+    brands: Schema.Attribute.Relation<'oneToMany', 'api::brand.brand'>;
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
+    filter_types: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::filter-type.filter-type'
+    >;
+    query_key: Schema.Attribute.Enumeration<
+      ['brand', 'format', 'filter-type']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'brand'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedInput extends Struct.ComponentSchema {
   collectionName: 'components_shared_inputs';
   info: {
@@ -90,6 +114,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.contact': SharedContact;
       'shared.description-field': SharedDescriptionField;
+      'shared.filter-item': SharedFilterItem;
       'shared.input': SharedInput;
       'shared.map': SharedMap;
       'shared.pillar': SharedPillar;

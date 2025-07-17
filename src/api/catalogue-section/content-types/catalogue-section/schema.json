@@ -23,6 +23,15 @@
     "search_placeholder": {
       "type": "string",
       "default": "Search"
+    },
+    "filter_items": {
+      "type": "component",
+      "component": "shared.filter-item",
+      "repeatable": true
+    },
+    "close_filter_text": {
+      "type": "string",
+      "default": "Close"
     }
   }
 }

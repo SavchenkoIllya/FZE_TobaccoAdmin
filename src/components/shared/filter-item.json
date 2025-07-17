@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_shared_filter_items",
+  "info": {
+    "displayName": "Filter Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "query_key": {
+      "type": "enumeration",
+      "required": true,
+      "default": "brand",
+      "enum": [
+        "brand",
+        "format",
+        "filter-type"
+      ]
+    },
+    "brands": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brand.brand"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    },
+    "filter_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::filter-type.filter-type"
+    }
+  },
+  "config": {}
+}

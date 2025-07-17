@@ -14,6 +14,15 @@ export interface SharedDescriptionField {
   property: "blend" | "cigarette_length" | "nicotine" | "tar" | "filter_type" | "diameter" | "filter_length" | "tobacco_length";
 };
 
+export interface SharedFilterItem {
+  id?: number;
+  title: string;
+  query_key: "brand" | "format" | "filter-type";
+  brands?: Brand[] | null;
+  categories?: Category[] | null;
+  filter_types?: FilterType[] | null;
+};
+
 export interface SharedInput {
   id?: number;
   placeholder: string;
@@ -81,6 +90,8 @@ export interface CatalogueSection {
   filter_text: string;
   sections_meta?: SectionsMeta | null;
   search_placeholder?: string;
+  filter_items?: SharedFilterItem[] | null;
+  close_filter_text?: string;
 };
 
 export interface Category {
@@ -90,7 +101,7 @@ export interface Category {
   updatedAt?: Date | string;
   publishedAt?: Date | string;
   locale?: string | null;
-  name?: string;
+  name: string;
 };
 
 export interface Contact {
