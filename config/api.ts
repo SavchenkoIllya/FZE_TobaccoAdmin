@@ -1,13 +1,7 @@
 export default {
   rest: {
-    defaultLimit: 100,
-    maxLimit: 250,
+    defaultLimit: 25,
+    maxLimit: 100,
     withCount: true,
-    query: {
-      parser: {
-        depth: 10,
-        allowDots: true,
-      },
-    },
   },
 };
