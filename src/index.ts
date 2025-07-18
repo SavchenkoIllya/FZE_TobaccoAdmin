@@ -1,15 +1,6 @@
 // import type { Core } from '@strapi/strapi';
 
 export default {
-  middlewares: {
-    name: 'strapi::query',
-    config: {
-      parser: {
-        depth: 20,
-        parameterLimit: 1000,
-      },
-    },
-  },
   /**
    * An asynchronous register function that runs before
    * your application is initialized.
