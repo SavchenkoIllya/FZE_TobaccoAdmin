@@ -3,8 +3,19 @@ export default ({ env }) => ({
         enabled: true,
         config: {
             outputLocation: "myTypes.ts",
-            // If this is true, then the outputLocation should be the location to a .ts file
             singleFile: true,
         },
+    },
+    email: {
+        config: {
+            provider: 'strapi-provider-email-resend',
+            providerOptions: {
+                apiKey: env('RESEND_API_KEY'),
+            },
+            settings: {
+                defaultFrom: 'info@vktobacco.com',
+                defaultReplyTo: 'info@vktobacco.com',
+            },
+        }
     },
 });
