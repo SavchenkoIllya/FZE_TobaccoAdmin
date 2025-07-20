@@ -46,11 +46,6 @@
         "images"
       ]
     },
-    "format": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::format.format"
-    },
     "blend": {
       "type": "string",
       "pluginOptions": {

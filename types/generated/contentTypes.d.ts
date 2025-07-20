@@ -803,36 +803,6 @@ export interface ApiFooterSectionFooterSection extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiFormatFormat extends Struct.CollectionTypeSchema {
-  collectionName: 'formats';
-  info: {
-    displayName: 'Format';
-    pluralName: 'formats';
-    singularName: 'format';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::format.format'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'King size'>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHeaderSectionHeaderSection extends Struct.SingleTypeSchema {
   collectionName: 'header_sections';
   info: {
@@ -1102,7 +1072,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::filter-type.filter-type'
     >;
-    format: Schema.Attribute.Relation<'oneToOne', 'api::format.format'>;
     image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1872,7 +1841,6 @@ declare module '@strapi/strapi' {
       'api::contacts-section.contacts-section': ApiContactsSectionContactsSection;
       'api::filter-type.filter-type': ApiFilterTypeFilterType;
       'api::footer-section.footer-section': ApiFooterSectionFooterSection;
-      'api::format.format': ApiFormatFormat;
       'api::header-section.header-section': ApiHeaderSectionHeaderSection;
       'api::hero-section.hero-section': ApiHeroSectionHeroSection;
       'api::message.message': ApiMessageMessage;
